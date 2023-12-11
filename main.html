@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cours Communist'Icam - Accueil</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 1.5em;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: #666;
+      border-radius: 5px;
+      margin: 10px 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      background-color: #007bff;
+      border-radius: 5px;
+      padding: 10px;
+      color: #fff;
+      position: fixed;
+      bottom: -300px;
+      left: 10px;
+      width: calc(100% - 20px);
+      text-align: center;
+      transition: bottom 0.3s ease-in-out;
+    }
+
+    .info-box.show {
+      bottom: 10px;
+    }
+
+    .info-box a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .info-box a:hover {
+      color: #0056b3;
+    }
+
+    .toggle-btn {
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 600px) {
+      main {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cours Communist'Icam - Accueil</h1>
+  </header>
+
+  <nav>
+    <a href="Premiere_Annee/main.html">Première Année</a>
+    <a href="DS/main.html">DS</a>
+    <a href="Deuxieme_Annee/main.html">Deuxième Année</a>
+  </nav>
+
+  <main>
+    <h1>Bienvenue sur la Communist'Icam</h1>
+    <p>Ce repo privé est l'ensemble de mes cours/cheat sheet que je me fais pour mes années de BTS ATI à l'ICAM Toulouse. Si je le rends public j'espère que ça aidera quelqu'un ahah</p>
+  </main>
+
+  <div class="info-box">
+    <p><strong>Lien vers le GDI et le GCM:</strong> <a href="https://drive.google.com/file/d/1CgU0DPpfuKtoJ4bV1HxqMY2yRWtrPK88/view?usp=sharing" target="_blank">GDI</a>, <a href="https://drive.google.com/file/d/1VcK9BKhtk_Uw38TFK-WEOSaWqGhjElpL/view?usp=sharing" target="_blank">GCM</a></p>
+  </div>
+
+  <button class="toggle-btn" onclick="toggleInfoBox()">Afficher/Masquer</button>
+
+  <script>
+    function toggleInfoBox() {
+      const infoBox = document.querySelector('.info-box');
+      infoBox.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
