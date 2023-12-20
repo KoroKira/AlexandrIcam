@@ -8,25 +8,17 @@
   <link rel="icon" type="image/png" href="CommunisticamLOGO3232.png" sizes="32x32" />
   <title>Cours Communist'Icam - Accueil</title>
   <style>
-    /* Ajout du style de la pop-up */
-    .popup {
-      display: none;
+    /* Ajout du style de la petite fenêtre */
+    .window {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
       background-color: red;
       color: white;
-      text-align: center;
       padding: 10px;
+      border-radius: 5px;
       box-shadow: 0px 0px 10px 0px #000000;
-    }
-
-    .popup-close {
-      cursor: pointer;
-      float: right;
-      font-size: 20px;
-      font-weight: bold;
     }
   </style>
 </head>
@@ -34,13 +26,11 @@
 
   <header>
     <h1>Cours Communist'Icam - Accueil</h1>
-
     <img src="Communisticam.png" alt="Communisticam Banner" style="width: 100%;">
   </header>
 
-  <!-- Pop-up -->
-  <div id="popup" class="popup">
-    <span class="popup-close" onclick="closePopup()">&times;</span>
+  <!-- Petite fenêtre -->
+  <div class="window">
     Si vous êtes intéressés pour aider au code, ou pour rajouter des ressources, ou pour même m'aider au développement, n'hésitez pas à me contacter, je vous ajouterai au repo GitHub
   </div>
 
@@ -75,16 +65,9 @@
       infoBox.classList.toggle('show');
     }
 
-    // Fonction pour fermer la pop-up
-    function closePopup() {
-      const popup = document.getElementById('popup');
-      popup.style.display = 'none';
-    }
-
-    // Afficher la pop-up au chargement de la page
+    // Afficher la petite fenêtre au chargement de la page
     window.onload = function() {
-      const popup = document.getElementById('popup');
-      popup.style.display = 'block';
+      alert("Si vous êtes intéressés pour aider au code, ou pour rajouter des ressources, ou pour même m'aider au développement, n'hésitez pas à me contacter, je vous ajouterai au repo GitHub");
     };
   </script>
 </body>
