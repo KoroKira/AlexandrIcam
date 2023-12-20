@@ -17,6 +17,12 @@
     <img src="Communisticam.png" alt="Communisticam Banner" style="width: 100%;">
   </header>
 
+    <!-- Pop-up -->
+  <div id="popup" class="popup">
+    <span class="popup-close" onclick="closePopup()">&times;</span>
+    Si vous êtes intéréssés pour aider au code, ou pour rajouter des ressources, ou pour même m'aider au développement, n'hésitez pas à me contacter, je vous ajouterai au repo GitHub
+  </div>
+
   <nav>
     <a href="Premiere_Annee/main.html">Première Année</a>
     <a href="DS/main.html">DS</a>
@@ -49,5 +55,19 @@
       infoBox.classList.toggle('show');
     }
   </script>
+
+  // Fonction pour fermer la pop-up
+    function closePopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'none';
+    }
+
+    // Afficher la pop-up au chargement de la page
+    window.onload = function() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'block';
+    };
+  </script>
+  
 </body>
 </html>
