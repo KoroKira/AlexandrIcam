@@ -1,11 +1,4 @@
-/* global-style.css */
-
-/* Réinitialisation des marges et des rembourrages */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* style.css */
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,35 +8,41 @@ body {
 }
 
 header {
+  width: 100%;
+  padding: 10px 0;
   background-color: #333;
-  color: #fff;
-  padding: 1rem;
   text-align: center;
 }
 
-header h1 {
-  font-size: 1.5em;
+header img {
+  width: 100%;
+  height: auto;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem;
+  justify-content: space-around;
+  align-items: center;
   background-color: #666;
   border-radius: 5px;
-  margin: 10px 20px;
+  margin: 10px 0;
+  padding: 10px;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  margin: 0 10px;
-  padding: 10px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffcc00;
 }
 
 main {
-  max-width: 600px;
+  max-width: 800px;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
@@ -55,7 +54,7 @@ main {
 h1 {
   color: #333;
   font-size: 2em;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 p {
@@ -67,11 +66,12 @@ p {
 .info-box {
   background-color: #007bff;
   border-radius: 5px;
-  padding: 1rem;
+  padding: 10px;
   color: #fff;
   position: fixed;
   bottom: -300px;
-  left: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   width: calc(100% - 20px);
   text-align: center;
   transition: bottom 0.3s ease-in-out;
@@ -93,27 +93,14 @@ p {
 .toggle-btn {
   background-color: #333;
   color: #fff;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .toggle-btn:hover {
   background-color: #555;
-}
-
-@media screen and (max-width: 600px) {
-  main {
-    padding: 10px;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav a {
-    margin: 5px 0;
-  }
 }
