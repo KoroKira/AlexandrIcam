@@ -52,9 +52,12 @@
       infoBox.classList.toggle('show');
     }
 
-    // Afficher la petite fenêtre au chargement de la page
+    // Afficher la petite fenêtre au premier chargement de la page seulement
     window.onload = function() {
-      alert("Si vous êtes intéressés pour aider au code, ou pour rajouter des ressources, ou pour même m'aider au développement, n'hésitez pas à me contacter, je vous ajouterai au repo GitHub");
+      if (!localStorage.getItem('alertShown')) {
+        alert("Si vous êtes intéressés pour aider au code, ou pour rajouter des ressources, ou pour même m'aider au développement, n'hésitez pas à me contacter, je vous ajouterai au repo GitHub");
+        localStorage.setItem('alertShown', true);
+      }
     };
   </script>
 </body>
