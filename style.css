@@ -7,9 +7,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: #333;
-  overflow: hidden; /* Ajout de cette propriété pour empêcher le défilement */
-  overflow-x: hidden; /* Ajout de cette propriété pour empêcher le défilement */
-  overflow-y: hidden; /* Ajout de cette propriété pour empêcher le défilement */
   margin: 0;
 }
 
