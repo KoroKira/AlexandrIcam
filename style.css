@@ -1,29 +1,34 @@
 /* global-style.css */
 
+/* Réinitialisation des marges et des rembourrages */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
-  margin: 0;
-  padding: 0;
   color: #333;
+  margin: 0;
 }
 
 header {
   background-color: #333;
   color: #fff;
-  padding: 10px;
+  padding: 1rem;
   text-align: center;
 }
 
 header h1 {
-  color: #fff;
   font-size: 1.5em;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0.5rem;
   background-color: #666;
   border-radius: 5px;
   margin: 10px 20px;
@@ -33,6 +38,8 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  margin: 0 10px;
+  padding: 10px;
 }
 
 main {
@@ -60,7 +67,7 @@ p {
 .info-box {
   background-color: #007bff;
   border-radius: 5px;
-  padding: 10px;
+  padding: 1rem;
   color: #fff;
   position: fixed;
   bottom: -300px;
@@ -99,5 +106,14 @@ p {
 @media screen and (max-width: 600px) {
   main {
     padding: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 5px 0;
   }
 }
