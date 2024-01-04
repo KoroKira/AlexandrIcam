@@ -26,10 +26,14 @@ header img {
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #666;
+  padding: 10px;
   border-radius: 5px;
 }
 
