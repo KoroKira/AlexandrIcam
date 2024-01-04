@@ -28,8 +28,6 @@ nav {
   align-items: center;
   background-color: #666;
   border-radius: 5px;
-  margin: 10px 0;
-  padding: 10px;
 }
 
 nav a {
@@ -46,7 +44,7 @@ nav a:hover {
 
 main {
   max-width: 800px;
-  margin: 20px auto;
+  margin: 300px auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
