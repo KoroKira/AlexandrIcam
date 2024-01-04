@@ -69,11 +69,12 @@ h1 {
   margin-bottom: 20px;
 }
 
-h4 {
-  color: #fff;
+header h4 {
+  color: #fff; /* Couleur du texte pour h4 à l'intérieur de header */
   font-size: 2em;
   margin-bottom: 20px;
-} /* push */
+}
+
 
 p {
   color: #555;
