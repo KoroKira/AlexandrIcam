@@ -69,6 +69,12 @@ h1 {
   margin-bottom: 20px;
 }
 
+h4 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
 p {
   color: #555;
   line-height: 1.6;
