@@ -38,7 +38,7 @@ nav {
   background-color: #666;
   padding: 10px;
   border-radius: 5px;
-  margin-top: 20px; /* Ajoutez cette propriété pour créer un espace entre le header et la barre de navigation */
+  margin-top: 5px; /* Ajoutez cette propriété pour créer un espace entre le header et la barre de navigation */
 }
 
 nav a {
@@ -70,7 +70,7 @@ h1 {
 }
 
 h4 {
-  color: #333;
+  color: #fff;
   font-size: 2em;
   margin-bottom: 20px;
 }
