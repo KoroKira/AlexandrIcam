@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Contributing to Cours-CommunistIcam
+# Contribuer à Cours-CommunistIcam
 
 First off, thanks for taking the time to contribute! ❤️
 
