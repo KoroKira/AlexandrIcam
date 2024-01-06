@@ -1,43 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
-<link rel="stylesheet" href="../style.css">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../CommunisticamLOGO.ico" />
   <link rel="icon" type="image/png" href="../CommunisticamLOGO3232.png" sizes="32x32" />
-  <title>Bienvenue sur votre espace</title>
+  <link rel="stylesheet" href="../style.css">
   <style>
     body {
       overflow-x: hidden;
       overflow-y: hidden;
     }
-
-    .iframe-container {
-      width: 50%;
-      float: left;
-      box-sizing: border-box;
-    }
-
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: 0;
-    }
   </style>
 </head>
+
 <body>
+
   <nav>
     <a href="../main.html">Accueil</a>
   </nav>
 
-  <div class="iframe-container">
-    <iframe src="https://cas.icam.fr/cas/login?service=https:%2F%2Fplanning.icam.fr%2F frameborder="0"></iframe>
-  </div>
+  <embed src="https://cas.icam.fr/cas/login?service=https:%2F%2Fplanning.icam.fr%2F" width="800" height="600"></embed>
 
-  <div class="iframe-container">
-    <iframe src="https://cas.icam.fr/cas/login?service=https%3A%2F%2Fmoodle.icam.fr%2Flogin%2Findex.php%3FauthCAS%3DCAS" frameborder="0"></iframe>
-  </div>
+  <footer>
+    © 2024 CommunistIcam. Tous droits réservés. <a href="MENTIONS_LEGALES.html">Politique de confidentialité</a>
+  </footer>
 
 </body>
+
 </html>
