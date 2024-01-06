@@ -1,6 +1,7 @@
 <!-- omit in toc -->
 # Contribuer à Cours-CommunistIcam
 
+Cette description est totalement stolen d'une docu et traduite en anglais mdr, j'ai la flemme de checker mais tranquille
 Tout d'abord, merci de prendre le temps de contribuer ! ❤️
 
 Tous types de contributions sont encouragés et appréciés. Consultez la [Table des matières](#table-of-contents) pour connaître les différentes façons d'aider et les détails sur la manière dont ce projet les gère. Veuillez vous assurer de lire la section pertinente avant de faire votre contribution. Cela facilitera beaucoup la tâche pour nous, les mainteneurs, et rendra l'expérience plus fluide pour tous les intervenants. La communauté attend avec impatience vos contributions. 🎉
@@ -129,6 +130,25 @@ Les suggestions d'amélioration sont suivies sous forme [d'issues GitHub](https:
 
 <!-- Vous voudrez peut-être créer un modèle d'issue pour les suggestions d'amélioration qui peut être utilisé comme guide et qui définit la structure des informations à inclure. Si vous le faites, référencez-le ici dans la description. -->
 
-### Votre première contribution de code
+### Votre Première Contribution de Code
 <!-- TODO
-inclure la configuration de l'environnement, de l'IDE et les instructions typiques pour
+Inclure la configuration de l'environnement, de l'IDE et les instructions typiques pour commencer !
+
+-->
+
+### Améliorer la Documentation
+<!-- TODO
+Mise à jour, amélioration et correction de la documentation
+
+-->
+
+## Guides de Style
+### Messages de Validation (Commit)
+<!-- TODO
+
+-->
+
+## Rejoindre l'Équipe du Projet
+<!-- TODO -->
+
+<!-- omit in toc -->
