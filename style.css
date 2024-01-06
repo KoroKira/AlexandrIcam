@@ -162,3 +162,19 @@ p {
 .course-btn:hover {
   background-color: #555;
 }
+
+.course-pdf-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.course-pdf-btn:hover {
+  background-color: #555;
+}
