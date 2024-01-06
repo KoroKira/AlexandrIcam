@@ -75,6 +75,16 @@
         localStorage.setItem('alertShown', true);
       }
     };
+
+      // Fonction pour générer un nombre aléatoire entre 0 et 1
+    function getRandomNumber() {
+      return Math.random();
+    }
+
+    // Appliquez la classe random-bg avec une probabilité de 20%
+    if (getRandomNumber() < 0.2) {
+      document.body.classList.add('random-bg');
+    }
   </script>
 
   <footer>

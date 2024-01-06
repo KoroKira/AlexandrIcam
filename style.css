@@ -3,11 +3,20 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
-  background-image: url('BG_Affiche.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   color: #333;
   margin: 0;
+}
+
+/* Ajoutez une classe aléatoire avec JavaScript */
+body.random-bg {
+  background-image: url('BG-Secret.jpg');
+}
+
+/* Appliquez le style de l'image de fond par défaut dans la plupart des cas */
+body {
+  background-image: url('BG_Affiche.jpg');
 }
 
 header {
