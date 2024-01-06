@@ -1,159 +1,134 @@
 <!-- omit in toc -->
 # Contribuer à Cours-CommunistIcam
 
-First off, thanks for taking the time to contribute! ❤️
+Tout d'abord, merci de prendre le temps de contribuer ! ❤️
 
-All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
+Tous types de contributions sont encouragés et appréciés. Consultez la [Table des matières](#table-of-contents) pour connaître les différentes façons d'aider et les détails sur la manière dont ce projet les gère. Veuillez vous assurer de lire la section pertinente avant de faire votre contribution. Cela facilitera beaucoup la tâche pour nous, les mainteneurs, et rendra l'expérience plus fluide pour tous les intervenants. La communauté attend avec impatience vos contributions. 🎉
 
-> And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
-> - Star the project
-> - Tweet about it
-> - Refer this project in your project's readme
-> - Mention the project at local meetups and tell your friends/colleagues
+> Et si vous aimez le projet mais n'avez tout simplement pas le temps de contribuer, c'est bien. Il existe d'autres moyens faciles de soutenir le projet et de montrer votre appréciation, que nous apprécierions également :
+> - Mettez une étoile sur le projet
+> - Tweetez à ce sujet
+> - Faites référence à ce projet dans le readme de votre projet
+> - Mentionnez le projet lors de rencontres locales et parlez-en à vos amis/collègues
 
 <!-- omit in toc -->
-## Table of Contents
+## Table des matières
 
-- [Code of Conduct](#code-of-conduct)
-- [I Have a Question](#i-have-a-question)
-- [I Want To Contribute](#i-want-to-contribute)
-- [Reporting Bugs](#reporting-bugs)
-- [Suggesting Enhancements](#suggesting-enhancements)
-- [Your First Code Contribution](#your-first-code-contribution)
-- [Improving The Documentation](#improving-the-documentation)
-- [Styleguides](#styleguides)
-- [Commit Messages](#commit-messages)
-- [Join The Project Team](#join-the-project-team)
-
-
-## Code of Conduct
-
-This project and everyone participating in it is governed by the
-[Cours-CommunistIcam Code of Conduct](https://github.com/KoroKira/Cours-CommunistIcamblob/master/CODE_OF_CONDUCT.md).
-By participating, you are expected to uphold this code. Please report unacceptable behavior
-to <>.
+- [Code de conduite](#code-de-conduite)
+- [J'ai une question](#jai-une-question)
+- [Je veux contribuer](#je-veux-contribuer)
+- [Signalement de bogues](#signalement-de-bogues)
+- [Suggérer des améliorations](#suggérer-des-améliorations)
+- [Votre première contribution de code](#votre-première-contribution-de-code)
+- [Améliorer la documentation](#améliorer-la-documentation)
+- [Guides de style](#guides-de-style)
+- [Messages de commit](#messages-de-commit)
+- [Rejoindre l'équipe du projet](#rejoindre-léquipe-du-projet)
 
 
-## I Have a Question
+## Code de conduite
 
-> If you want to ask a question, we assume that you have read the available [Documentation](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/documentation.md).
+Ce projet et toutes les personnes qui y participent sont régis par le [Code de conduite de Cours-CommunistIcam](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/CODE_OF_CONDUCT.md). En participant, vous vous engagez à respecter ce code. Veuillez signaler tout comportement inacceptable à <>.
 
-Before you ask a question, it is best to search for existing [Issues](https://github.com/KoroKira/Cours-CommunistIcam/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
+## J'ai une question
 
-If you then still feel the need to ask a question and need clarification, we recommend the following:
+> Si vous avez une question, nous partons du principe que vous avez lu la [Documentation](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/documentation.md) disponible.
 
-- Open an [Issue](https://github.com/KoroKira/Cours-CommunistIcam/issues/new).
-- Provide as much context as you can about what you're running into.
-- Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
+Avant de poser une question, il est préférable de rechercher des [Issues](https://github.com/KoroKira/Cours-CommunistIcam/issues) existantes qui pourraient vous aider. Si vous trouvez une issue appropriée et avez encore besoin de clarification, vous pouvez écrire votre question dans cette issue. Il est également conseillé de rechercher des réponses sur Internet en premier.
 
-We will then take care of the issue as soon as possible.
+Si vous avez toujours besoin de poser une question et d'obtenir des éclaircissements, nous vous recommandons ce qui suit :
+
+- Ouvrez une [Issue](https://github.com/KoroKira/Cours-CommunistIcam/issues/new).
+- Fournissez autant de contexte que possible sur ce que vous rencontrez.
+- Fournissez les versions du projet et de la plateforme (nodejs, npm, etc.), selon ce qui semble pertinent.
+
+Nous nous occuperons ensuite de l'issue dès que possible.
 
 <!--
-You might want to create a separate issue tag for questions and include it in this description. People should then tag their issues accordingly.
+Vous voudrez peut-être créer un tag d'issue distinct pour les questions et l'inclure dans cette description. Les gens devraient alors taguer leurs issues en conséquence.
 
-Depending on how large the project is, you may want to outsource the questioning, e.g. to Stack Overflow or Gitter. You may add additional contact and information possibilities:
+En fonction de la taille du projet, vous voudrez peut-être externaliser les questions, par exemple sur Stack Overflow ou Gitter. Vous pouvez ajouter des moyens de contact et d'information supplémentaires :
 - IRC
 - Slack
 - Gitter
-- Stack Overflow tag
+- Tag Stack Overflow
 - Blog
 - FAQ
 - Roadmap
-- E-Mail List
+- Liste de diffusion par e-mail
 - Forum
 -->
 
-## I Want To Contribute
+## Je veux contribuer
 
-> ### Legal Notice <!-- omit in toc -->
-> When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
+> ### Avis légal <!-- omit in toc -->
+> Lorsque vous contribuez à ce projet, vous devez accepter que vous avez rédigé 100% du contenu, que vous avez les droits nécessaires sur le contenu et que le contenu que vous contribuez peut être fourni sous la licence du projet.
 
-### Reporting Bugs
-
-<!-- omit in toc -->
-#### Before Submitting a Bug Report
-
-A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
-
-- Make sure that you are using the latest version.
-- Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions (Make sure that you have read the [documentation](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/documentation.md). If you are looking for support, you might want to check [this section](#i-have-a-question)).
-- To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](https://github.com/KoroKira/Cours-CommunistIcamissues?q=label%3Abug).
-- Also make sure to search the internet (including Stack Overflow) to see if users outside of the GitHub community have discussed the issue.
-- Collect information about the bug:
-- Stack trace (Traceback)
-- OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
-- Version of the interpreter, compiler, SDK, runtime environment, package manager, depending on what seems relevant.
-- Possibly your input and the output
-- Can you reliably reproduce the issue? And can you also reproduce it with older versions?
+### Signalement de bogues
 
 <!-- omit in toc -->
-#### How Do I Submit a Good Bug Report?
+#### Avant de soumettre un rapport de bogue
 
-> You must never report security related issues, vulnerabilities or bugs including sensitive information to the issue tracker, or elsewhere in public. Instead sensitive bugs must be sent by email to <>.
-<!-- You may add a PGP key to allow the messages to be sent encrypted as well. -->
+Un bon rapport de bogue ne doit pas laisser les autres chercher des informations supplémentaires. Nous vous demandons donc de faire des recherches attentives, de collecter des informations et de décrire le problème en détail dans votre rapport. Veuillez effectuer les étapes suivantes à l'avance pour nous aider à corriger tout bogue potentiel aussi rapidement que possible.
 
-We use GitHub issues to track bugs and errors. If you run into an issue with the project:
-
-- Open an [Issue](https://github.com/KoroKira/Cours-CommunistIcam/issues/new). (Since we can't be sure at this point whether it is a bug or not, we ask you not to talk about a bug yet and not to label the issue.)
-- Explain the behavior you would expect and the actual behavior.
-- Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
-- Provide the information you collected in the previous section.
-
-Once it's filed:
-
-- The project team will label the issue accordingly.
-- A team member will try to reproduce the issue with your provided steps. If there are no reproduction steps or no obvious way to reproduce the issue, the team will ask you for those steps and mark the issue as `needs-repro`. Bugs with the `needs-repro` tag will not be addressed until they are reproduced.
-- If the team is able to reproduce the issue, it will be marked `needs-fix`, as well as possibly other tags (such as `critical`), and the issue will be left to be [implemented by someone](#your-first-code-contribution).
-
-<!-- You might want to create an issue template for bugs and errors that can be used as a guide and that defines the structure of the information to be included. If you do so, reference it here in the description. -->
-
-
-### Suggesting Enhancements
-
-This section guides you through submitting an enhancement suggestion for Cours-CommunistIcam, **including completely new features and minor improvements to existing functionality**. Following these guidelines will help maintainers and the community to understand your suggestion and find related suggestions.
+- Assurez-vous d'utiliser la dernière version.
+- Déterminez si votre bogue est vraiment un bogue et non une erreur de votre part, par exemple en utilisant des composants ou des versions d'environnement incompatibles (assurez-vous d'avoir lu la [documentation](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/documentation.md). Si vous cherchez du support, vous voudrez peut-être vérifier [cette section](#i-have-a-question)).
+- Pour voir si d'autres utilisateurs ont rencontré (et potentiellement déjà résolu) le même problème que vous, vérifiez s'il existe déjà un rapport de bogue pour votre bogue ou erreur dans le [bug tracker](https://github.com/KoroKira/Cours-CommunistIcam/issues?q=label%3Abug).
+- Assurez-vous également de rechercher sur Internet (y compris Stack Overflow) pour voir si des utilisateurs en dehors de la communauté GitHub ont discuté du problème.
+- Collectez des informations sur le bogue :
+- Trace de la pile (traceback)
+- Système d'exploitation, plateforme et version (Windows, Linux, macOS, x86, ARM)
+- Version de l'interpréteur, du compilateur, du SDK, de l'environnement d'exécution, du gestionnaire de packages, selon ce qui semble pertinent.
+- Éventuellement, votre entrée et la sortie
+- Pouvez-vous reproduire le problème de manière fiable ? Et pouvez-vous également le reproduire avec des versions plus anciennes ?
 
 <!-- omit in toc -->
-#### Before Submitting an Enhancement
+#### Comment soumettre un bon rapport de bogue ?
 
-- Make sure that you are using the latest version.
-- Read the [documentation](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/documentation.md) carefully and find out if the functionality is already covered, maybe by an individual configuration.
-- Perform a [search](https://github.com/KoroKira/Cours-CommunistIcam/issues) to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
-- Find out whether your idea fits with the scope and aims of the project. It's up to you to make a strong case to convince the project's developers of the merits of this feature. Keep in mind that we want features that will be useful to the majority of our users and not just a small subset. If you're just targeting a minority of users, consider writing an add-on/plugin library.
+> Vous ne devez jamais signaler des problèmes liés à la sécurité, des vulnérabilités ou des bugs contenant des informations sensibles sur le bug tracker ou ailleurs en public. Au lieu de cela, les bugs sensibles doivent être envoyés par courriel à <>.
+<!-- Vous pouvez ajouter une clé PGP pour permettre l'envoi des messages de manière chiffrée également. -->
+
+Nous utilisons les issues GitHub pour suivre les bugs et erreurs. Si vous rencontrez un problème avec le projet :
+
+- Ouvrez une [Issue](https://github.com/KoroKira/Cours-CommunistIcam/issues/new). (Étant donné que nous ne pouvons pas être sûrs à ce stade s'il s'agit d'un bogue ou non, nous vous demandons de ne pas parler d'un bogue et de ne pas étiqueter l'issue.)
+- Expliquez le comportement que vous attendez et le comportement réel.
+- Fournissez autant de contexte que possible et décrivez les *étapes de reproduction* qu'une autre personne peut suivre pour recréer le problème de manière indépendante. Cela inclut généralement votre code. Pour de bons rapports de bogues, vous devez isoler le problème et créer un cas de test réduit.
+- Fournissez les informations que vous avez collectées dans la section précédente.
+
+Une fois l'issue ouverte :
+
+- L'équipe du projet étiquettera l'issue en conséquence.
+- Un membre de l'équipe tentera de reproduire le problème avec les étapes que vous avez fournies. S'il n'y a pas d'étapes de reproduction ou aucune façon évidente de reproduire le problème, l'équipe vous demandera ces étapes et marquera l'issue comme `needs-repro`. Les bogues avec l'étiquette `needs-repro` ne seront pas traités tant qu'ils ne seront pas reproduits.
+- Si l'équipe parvient à reproduire le problème, il sera marqué `needs-fix`, ainsi que éventuellement d'autres étiquettes (telles que `critical`), et l'issue sera laissée à [implémenter par quelqu'un](#your-first-code-contribution).
+
+<!-- Vous voudrez peut-être créer un modèle d'issue pour les bogues et les erreurs qui peut être utilisé comme guide et qui définit la structure des informations à inclure. Si vous le faites, référencez-le ici dans la description. -->
+
+
+### Suggérer des améliorations
+
+Cette section vous guide à travers la soumission d'une suggestion d'amélioration pour Cours-CommunistIcam, **y compris les nouvelles fonctionnalités et les améliorations mineures de la fonctionnalité existante**. Suivre ces directives aidera les mainteneurs et la communauté à comprendre votre suggestion et à trouver des suggestions connexes.
 
 <!-- omit in toc -->
-#### How Do I Submit a Good Enhancement Suggestion?
+#### Avant de soumettre une amélioration
 
-Enhancement suggestions are tracked as [GitHub issues](https://github.com/KoroKira/Cours-CommunistIcam/issues).
+- Assurez-vous d'utiliser la dernière version.
+- Lisez attentivement la [documentation](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/documentation.md) et découvrez si la fonctionnalité est déjà couverte, peut-être par une configuration individuelle.
+- Effectuez une [recherche](https://github.com/KoroKira/Cours-CommunistIcam/issues) pour voir si l'amélioration a déjà été suggérée. Si c'est le cas, ajoutez un commentaire à l'issue existante au lieu d'en ouvrir une nouvelle.
+- Découvrez si votre idée correspond à la portée et aux objectifs du projet. C'est à vous de faire valoir le bien-fondé de cette fonctionnalité aux développeurs du projet. Gardez à l'esprit que nous voulons des fonctionnalités qui seront utiles à la majorité de nos utilisateurs et pas seulement à une petite partie. Si vous ciblez simplement une minorité d'utilisateurs, envisagez d'écrire une bibliothèque d'extension/plugin.
 
-- Use a **clear and descriptive title** for the issue to identify the suggestion.
-- Provide a **step-by-step description of the suggested enhancement** in as many details as possible.
-- **Describe the current behavior** and **explain which behavior you expected to see instead** and why. At this point you can also tell which alternatives do not work for you.
-- You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux. <!-- this should only be included if the project has a GUI -->
-- **Explain why this enhancement would be useful** to most Cours-CommunistIcam users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
+<!-- omit in toc -->
+#### Comment soumettre une bonne suggestion d'amélioration ?
 
-<!-- You might want to create an issue template for enhancement suggestions that can be used as a guide and that defines the structure of the information to be included. If you do so, reference it here in the description. -->
+Les suggestions d'amélioration sont suivies sous forme [d'issues GitHub](https://github.com/KoroKira/Cours-CommunistIcam/issues).
 
-### Your First Code Contribution
+- Utilisez un **titre clair et descriptif** pour l'issue afin d'identifier la suggestion.
+- Fournissez une **description étape par étape de l'amélioration suggérée** aussi en détail que possible.
+- **Décrivez le comportement actuel** et **expliquez quel comportement vous vous attendiez à voir à la place** et pourquoi. À ce stade, vous pouvez également indiquer quelles alternatives ne fonctionnent pas pour vous.
+- Vous voudrez peut-être **inclure des captures d'écran et des GIF animés** qui vous aident à démontrer les étapes ou à indiquer la partie à laquelle la suggestion est liée. Vous pouvez utiliser [cet outil](https://www.cockos.com/licecap/) pour enregistrer des GIF sur macOS et Windows, et [cet outil](https://github.com/colinkeenan/silentcast) ou [cet outil](https://github.com/GNOME/byzanz) sur Linux. <!-- cela ne devrait être inclus que si le projet a une interface graphique -->
+- **Expliquez pourquoi cette amélioration serait utile** pour la plupart des utilisateurs de Cours-CommunistIcam. Vous voudrez peut-être également mentionner les autres projets qui l'ont mieux résolu et qui pourraient servir d'inspiration.
+
+<!-- Vous voudrez peut-être créer un modèle d'issue pour les suggestions d'amélioration qui peut être utilisé comme guide et qui définit la structure des informations à inclure. Si vous le faites, référencez-le ici dans la description. -->
+
+### Votre première contribution de code
 <!-- TODO
-include Setup of env, IDE and typical getting started instructions?
-
--->
-
-### Improving The Documentation
-<!-- TODO
-Updating, improving and correcting the documentation
-
--->
-
-## Styleguides
-### Commit Messages
-<!-- TODO
-
--->
-
-## Join The Project Team
-<!-- TODO -->
-
-<!-- omit in toc -->
-## Attribution
-This guide is based on the **contributing-gen**. [Make your own](https://github.com/bttger/contributing-gen)!
+inclure la configuration de l'environnement, de l'IDE et les instructions typiques pour
