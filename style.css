@@ -79,6 +79,7 @@ p {
 }
 
 .info-box {
+  z-index: 0;
   background-color: #007bff;
   border-radius: 5px;
   padding: 10px;
