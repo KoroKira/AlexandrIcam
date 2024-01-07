@@ -81,10 +81,15 @@
       return Math.random();
     }
 
-    // Appliquez la classe random-bg avec une probabilité de 20%
-    if (getRandomNumber() < 0.2) {
+    // Appliquez la classe random-bg avec une probabilité de 19%
+    if (getRandomNumber() < 0.19) {
       document.body.classList.add('random-bg');
     }
+
+    // Appliquez la classe random-bg avec une probabilité de 1%
+    if (getRandomNumber() < 0.01) {
+        document.body.classList.add('random-bg-secret');
+      }
   </script>
 
   <footer>
