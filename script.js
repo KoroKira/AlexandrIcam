@@ -23,7 +23,7 @@ function getCookie(name) {
 
 // Fonction pour supprimer un cookie
 function eraseCookie(name) {
-  document.cookie = name + "=; Max-Age=-99999999;";
+  document.cookie = name + '=; Max-Age=-99999999; path=/';
 }
 
 // Fonction pour activer/désactiver le filtre rouge
@@ -54,4 +54,3 @@ document.addEventListener("DOMContentLoaded", function () {
     body.classList.add("red-filter-active");
   }
 });
-
