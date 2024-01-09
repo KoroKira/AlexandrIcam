@@ -1,6 +1,24 @@
+// sudokuJS v0.4.4
+// https://github.com/pocketjoso/sudokuJS
+// Author: Jonas Ohlsson
+// License: MIT
+
 (function (window, $, undefined) {
 	'use strict';
+	/*TODO:
+		--possible additions--
+		toggle edit candidates
+		undo/redo
+	*/
+
+	/**
+	* Define a jQuery plugin
+	*/
     $.fn.sudokuJS = function(opts) {
+
+		/*
+		 * constants
+		 *-----------*/
 
 		var DIFFICULTY_EASY = "easy";
 		var DIFFICULTY_MEDIUM = "medium";
@@ -17,6 +35,9 @@
 			DIFFICULTY_VERY_HARD
 		];
 
+		/*
+		 * variables
+		 *-----------*/
 		opts = opts || {};
 		var solveMode = SOLVE_MODE_STEP,
 				difficulty = "unknown",
@@ -25,57 +46,81 @@
 				boardFinished = false,
 				boardError = false,
 				onlyUpdatedCandidates = false,
-				gradingMode = false, 
-				generatingMode = false,
-				invalidCandidates = [],
+				gradingMode = false, //solving without updating UI
+				generatingMode = false, //silence board unsolvable errors
+				invalidCandidates = [], //used by the generateBoard function
 
+
+		/*
+		the score reflects how much increased difficulty the board gets by having the pattern rather than an already solved cell
+		*/
 			strategies = [
 				{title: "openSingles", fn:	openSingles, score : 0.1	},
-
+				 //harder for human to spot
 				{title: "singleCandidate", fn:	singleCandidate, score : 9	},
 				{title: "visualElimination", fn:	visualElimination, score : 8	},
-
+				//only eliminates one candidate, should have lower score?
 				{title: "nakedPair", fn:	nakedPair, score : 50	},
 				{title: "pointingElimination", fn:	pointingElimination, score : 80	},
-
+				//harder for human to spot
 				{title: "hiddenPair", fn:	hiddenPair, score :	90	},
 				{title: "nakedTriplet", fn:	nakedTriplet, score :	100 },
-
+				//never gets used unless above strats are turned off?
 				{title: "hiddenTriplet", fn:	hiddenTriplet, score :	140	},
-	
+				//never gets used unless above strats are turned off?
 				{title: "nakedQuad", fn:	nakedQuad, score :	150 },
-
+				//never gets used unless above strats are turned off?
 				{title: "hiddenQuad", fn:	hiddenQuad, score :	280	}
 			],
 
+
+		//nr of times each strategy has been used for solving this board - used to calculate difficulty score
 			usedStrategies = [],
+
+		/*board variable gets enhanced into list of objects on init:
+			,{
+				val: null
+				,candidates: [
+					]
+			}
+		*/
 			board = [],
 			boardSize,
-			boardNumbers, 
+			boardNumbers, // array of 1-9 by default, generated in initBoard
 
-
+		//indexes of cells in each house - generated on the fly based on boardSize
 			houses = [
-
+				//hor. rows
 				[],
-
+				//vert. rows
 				[],
-
+				//boxes
 				[]
 			];
 
 
 
+
+		/*
+		 * selectors
+		 *-----------*/
 		 var $board = $(this),
 			$boardInputs, //created
 			$boardInputCandidates; //created
 
 
+
+		 /*
+		 * methods
+		 *-----------*/
+		 //shortcut for logging..
 		function log(msg){
 			if(window.console && console.log)
 			 console.log(msg);
 		}
 
 
+		//array contains function
 		var contains = function(a, obj) {
 			for (var i = 0; i < a.length; i++) {
 				if (a[i] === obj) {
@@ -95,6 +140,13 @@
 			return r;
 		};
 
+
+
+		/* calcBoardDifficulty
+		 * --------------
+		 *  TYPE: solely based on strategies required to solve board (i.e. single count per strategy)
+		 *  SCORE: distinguish between boards of same difficulty.. based on point system. Needs work.
+		 * -----------------------------------------------------------------*/
 		var calcBoardDifficulty = function(usedStrategies){
 			var boardDiff = {};
 			if(usedStrategies.length < 3)
@@ -108,18 +160,23 @@
 			for(var i=0; i < strategies.length; i++){
 				var freq = usedStrategies[i];
 				if(!freq)
-					continue; 
+					continue; //undefined or 0, won't effect score
 				var stratObj = strategies[i];
 				totalScore += freq * stratObj.score;
 			}
 			boardDiff.score = totalScore;
+			//log("totalScore: "+totalScore);
 
 			if(totalScore > 750)
+			// if(totalScore > 2200)
 				boardDiff.level = DIFFICULTY_VERY_HARD;
 
 			return boardDiff;
 		};
 
+
+		/* isBoardFinished
+		 * -----------------------------------------------------------------*/
 		var isBoardFinished = function(){
 			for (var i=0; i < boardSize*boardSize; i++){
 				if(board[i].val === null)
@@ -128,21 +185,24 @@
 			return true;
 		};
 
+
+		/* generateHouseIndexList
+		 * -----------------------------------------------------------------*/
 		var generateHouseIndexList = function(){
-
+        // reset houses
         houses = [
-
+				//hor. rows
 				[],
-
+				//vert. rows
 				[],
-
+				//boxes
 				[]
 			]
 			var boxSideSize = Math.sqrt(boardSize);
 
 			for(var i=0; i < boardSize; i++){
-				var hrow = [];
-				var vrow = [];
+				var hrow = []; //horisontal row
+				var vrow = []; //vertical row
 				var box = [];
 				for(var j=0; j < boardSize; j++){
 					hrow.push(boardSize*i + j);
@@ -150,11 +210,16 @@
 
 					if(j < boxSideSize){
 						for(var k=0; k < boxSideSize; k++){
-
+							//0, 0,0, 27, 27,27, 54, 54, 54 for a standard sudoku
 							var a = Math.floor(i/boxSideSize) * boardSize * boxSideSize;
-
+							//[0-2] for a standard sudoku
 							var b = (i%boxSideSize) * boxSideSize;
-							var boxStartIndex = a +b; 
+							var boxStartIndex = a +b; //0 3 6 27 30 33 54 57 60
+
+								//every boxSideSize box, skip boardSize num rows to next box (on new horizontal row)
+								//Math.floor(i/boxSideSize)*boardSize*2
+								//skip across horizontally to next box
+								//+ i*boxSideSize;
 
 
 							box.push(boxStartIndex + boardSize*j + k);
@@ -167,6 +232,11 @@
 			}
 		};
 
+
+		/* initBoard
+		 * --------------
+		 *  inits board, variables.
+		 * -----------------------------------------------------------------*/
 		var initBoard = function(opts){
 			var alreadyEnhanced = (board[0] !== null && typeof board[0] === "object");
 			var nullCandidateList = [];
@@ -186,20 +256,24 @@
 			generateHouseIndexList();
 
 			if(!alreadyEnhanced){
-
+				//enhance board to handle candidates, and possibly other params
 				for(var j=0; j < boardSize*boardSize ; j++){
 					var cellVal = (typeof board[j] === "undefined") ? null : board[j];
 					var candidates = cellVal === null ? boardNumbers.slice() : nullCandidateList.slice();
 					board[j] = {
 						val: cellVal,
 						candidates: candidates
-
+						//title: "" possibl add in 'A1. B1...etc
 					};
 				}
 			}
 		};
 
 
+		/* renderBoard
+		 * --------------
+		 *  dynamically renders the board on the screen (into the DOM), based on board variable
+		 * -----------------------------------------------------------------*/
 		var renderBoard = function(){
 			//log("renderBoard");
 			//log(board);
@@ -219,20 +293,23 @@
 			$boardInputCandidates = $board.find(".candidates");
 		};
 
-	
+		/* renderBoardCell
+		 * -----------------------------------------------------------------*/
 		var renderBoardCell = function(boardCell, id){
 			var val = (boardCell.val === null) ? "" : boardCell.val;
 			var candidates = boardCell.candidates || [];
 			var candidatesString = buildCandidatesString(candidates);
 			var maxlength = (boardSize < 10) ? " maxlength='1'" : "";
 			return "<div class='sudoku-board-cell'>" +
-
+						//want to use type=number, but then have to prevent chrome scrolling and up down key behaviors..
 						"<input type='text' pattern='\\d*' novalidate id='input-"+id+"' value='"+val+"'"+maxlength+">" +
 						"<div id='input-"+id+"-candidates' class='candidates'>" + candidatesString + "</div>" +
 					"</div>";
 		};
 
 
+		/* buildCandidatesString
+		 * -----------------------------------------------------------------*/
 		var buildCandidatesString = function(candidatesList){
 			var s="";
 			for(var i=1; i<boardSize+1; i++){
@@ -245,6 +322,20 @@
 		};
 
 
+		/* updateUI
+		 * --------------
+		 *  updates the UI
+		 * -----------------------------------------------------------------
+		var updateUI = function(opts){
+			var opts = opts || {};
+			var paintNew = (typeof opts.paintNew !== "undefined") ? opts.paintNew : true;
+			updateUIBoard(paintNew);
+		}*/
+
+		/* updateUIBoard -
+		 * --------------
+		 *  updates the board with our latest values
+		 * -----------------------------------------------------------------*/
 		 var updateUIBoard = function(paintNew){
 			//log("re painting every input on board..");
 			$boardInputs
@@ -263,6 +354,11 @@
 				});
 		};
 
+
+		/* updateUIBoardCell -
+		 * --------------
+		 *  updates ONE cell on the board with our latest values
+		 * -----------------------------------------------------------------*/
 		 var updateUIBoardCell = function(cellIndex, opts){
 			opts = opts || {};
 			//log("updateUIBoardCell: "+cellIndex);
@@ -280,16 +376,25 @@
 				.html(buildCandidatesString(board[cellIndex].candidates));
 		};
 
-
+		/* uIBoardHighlightRemoveCandidate
+		 * --------------
+		 *  highlight candidate in cell that is about to be removed
+		 * -----------------------------------------------------------------*/
 		var uIBoardHighlightRemoveCandidate = function(cellIndex, digit){
 			$("#input-"+cellIndex+"-candidates div:nth-of-type("+digit+")").addClass("candidate--to-remove");
 		};
 
+		/* uIBoardHighlightCandidate -
+		 * --------------
+		 *  highight candidate in cell that helps eliminate another candidate
+		 * -----------------------------------------------------------------*/
 		var uIBoardHighlightCandidate = function(cellIndex, digit){
 			$("#input-"+cellIndex+"-candidates div:nth-of-type("+digit+")").addClass("candidate--highlight");
 		};
 
 
+		/* removeCandidatesFromCell
+		-----------------------------------------------------------------*/
 		var removeCandidatesFromCell = function(cell, candidates){
 			var boardCell = board[cell];
 			var c = boardCell.candidates;
