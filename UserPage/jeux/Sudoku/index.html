@@ -17,6 +17,9 @@
 </head>
 
 <body>
+    <nav>
+        <a href="../main.html">Accueil</a>
+    </nav>
     <header class="center-screen">
         <div class="header light">
             <div class="inner-header flex">
@@ -54,30 +57,30 @@
         </div>
         <table class="center-screen" style="max-width: 100%; border-spacing: 50px 0; padding-top: 10px; padding-bottom: 30px;">
             <tr>
-                <td style="text-align: center; font-size: 24px; padding-bottom: 3px;">Choose difficulty</td>
-                <td style="text-align: center; font-size: 24px; padding-bottom: 3px;">Choose time</td>
+                <td style="text-align: center; font-size: 24px; padding-bottom: 3px;">Choix de la difficulté</td>
+                <td style="text-align: center; font-size: 24px; padding-bottom: 3px;">Durée</td>
             </tr>
             <tr>
                 <td style="text-align: center">
                     <div class="btn-group" role="group">
                         <input type="radio" class="btn-check" id="difficulty-easy" name="diff" value="easy" autocomplete="off" checked>
                         <label class="btn btn-outline-primary" for="difficulty-easy">
-							<i class="fas fa-dice-one"></i> Easy
+							<i class="fas fa-dice-one"></i> Facile
 						</label>
 
                         <input type="radio" class="btn-check" id="difficulty-medium" name="diff" value="medium" autocomplete="off">
                         <label class="btn btn-outline-primary" for="difficulty-medium">
-							<i class="fas fa-dice-two"></i> Medium
+							<i class="fas fa-dice-two"></i> Moyen
 						</label>
 
                         <input type="radio" class="btn-check" id="difficulty-hard" name="diff" value="hard" autocomplete="off">
                         <label class="btn btn-outline-primary" for="difficulty-hard">
-							<i class="fas fa-dice-three"></i> Hard
+							<i class="fas fa-dice-three"></i> Dur
 						</label>
 
                         <input type="radio" class="btn-check" id="difficulty-veryhard" name="diff" value="veryhard" autocomplete="off">
                         <label class="btn btn-outline-primary" for="difficulty-veryhard">
-							<i class="fas fa-dice-four"></i> Very Hard
+							<i class="fas fa-dice-four"></i> Diabolique
 						</label>
                     </div>
                 </td>
@@ -100,13 +103,13 @@
 
                         <input type="radio" class="btn-check" id="time-stopwatch" name="time" value="stopwatch" autocomplete="off">
                         <label class="btn btn-outline-primary" for="time-stopwatch">
-							<i class="fas fa-stopwatch"></i> Stopwatch
+							<i class="fas fa-stopwatch"></i> Aucun temps
 						</label>
                     </div>
                 </td>
             </tr>
         </table>
-        <button type="button" id="start-btn" class="mybutton">New game!</button>
+        <button type="button" id="start-btn" class="mybutton">Nouvelle partie !</button>
     </header>
 
     <div align="center" id="spinner-container" class="hidden">
@@ -115,13 +118,13 @@
         </div>
         <br>
         <div id="spinner-element-2" class="row" style="font-size: 20px;">
-            <strong>Loading puzzle...</strong>
+            <strong>Chargement...</strong>
         </div>
     </div>
 
     <div id="game-container">
         <div class="alert alert-warning center-screen hidden" id="alert-pause" role="alert">
-            <i class="far fa-pause-circle"></i> PAUSED
+            <i class="far fa-pause-circle"></i> PAUSE
         </div>
 
         <div id="stats" class="center-screen">
@@ -138,8 +141,8 @@
                 <div id="stopwatch-container" class="hidden" style="margin-top: 35px"></div>
             </div>
             <p id="lives"></p>
-            <div class="snackbar" id="snackbar-win">You won!🏆</div>
-            <div class="snackbar" id="snackbar-lose">You lost!☹️</div>
+            <div class="snackbar" id="snackbar-win">Tu as gagné!🏆</div>
+            <div class="snackbar" id="snackbar-lose">Tu as perdu!☹️</div>
         </div>
 
         <div id="game" class="center-screen">
@@ -170,24 +173,24 @@
         <div class="center-screen">
             <div class="btn-group" role="group">
                 <button type="button" id="tips-btn" class="btn btn-secondary btn-sm" disabled rel="tooltip" title="Show all possible values for each empty cell." data-placement="bottom">
-					<i class="fas fa-atom"></i> Tips
+					<i class="fas fa-atom"></i> Aide
 				</button>
 
                 <button type="button" id="solve-btn" class="btn btn-secondary btn-sm" disabled rel="tooltip" title="Solve the current Sudoku puzzle." data-placement="bottom">
-					<i class="far fa-lightbulb"></i> Show solution
+					<i class="far fa-lightbulb"></i> Montrer la solution
 				</button>
 
                 <button type="button" id="solve-one-step-btn" class="btn btn-secondary btn-sm" disabled rel="tooltip" title="Solve one empty cell for the current Sudoku puzzle." data-placement="bottom">
-					<i class="fas fa-angle-double-right"></i> Solve one step
+					<i class="fas fa-angle-double-right"></i> Résoudre une étape
 				</button>
             </div>
             <div class="btn-group" role="group">
                 <button type="button" id="refresh-btn" class="btn btn-secondary btn-sm" disabled rel="tooltip" title="Refresh the Sudoku board with the same difficulty." data-placement="bottom">
-					<i class="fas fa-sync"></i> Refresh puzzle
+					<i class="fas fa-sync"></i> Rafraichir le sudoku
 				</button>
 
                 <button type="button" id="restart-btn" class="btn btn-secondary btn-sm" disabled rel="tooltip" title="Restart the puzzle by clearing all cells you just tried to solve." data-placement="bottom">
-					<i class="fas fa-undo"></i> Restart puzzle
+					<i class="fas fa-undo"></i> Redémarrer le sudoku
 				</button>
             </div>
             <div class="btn-group" role="group">
@@ -196,7 +199,7 @@
 				</button>
 
                 <button type="button" id="resume-btn" class="btn btn-secondary btn-sm" disabled>
-					<i class="fas fa-hourglass-half"></i> Resume
+					<i class="fas fa-hourglass-half"></i> Reprendre
 				</button>
             </div>
         </div>

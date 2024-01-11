@@ -18,32 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSudokuLib();
     // Execute startGame function when start button is clicked
     id("start-btn").addEventListener("click", startGame);
-    // Add event listener to theme toggle button
-    id("theme-btn").addEventListener("change", function() {
-        if (this.checked) {
-            // dark mode
-            qs(".box").setAttribute('style', 'background-color:#CCCCCC;')
-            qs(".ball").setAttribute('style', 'transform:translatex(100%);')
-            document.body.classList.remove("light");
-            document.body.classList.add("dark");
-            qs(":root").style.setProperty('--digitColor', '#82FA58');
-            qs(":root").style.setProperty('--digitBackgroundColor', '#505050');
-            id("spinner-element-1").style.color = "#ff9419";
-            id("spinner-element-2").style.color = "#ff9419";
-            qs(".header").classList.remove("light");
-            qs(".header").classList.add("dark");
-        } else {
-            // light mode
-            qs(".box").setAttribute('style', 'background-color:black; color:white;')
-            qs(".ball").setAttribute('style', 'transform:translatex(0%);')
-            document.body.classList.remove("dark");
-            document.body.classList.add("light");
-            qs(":root").style.setProperty('--digitColor', 'black');
-            qs(":root").style.setProperty('--digitBackgroundColor', '#EEEEEE');
-            qs(".header").classList.remove("dark");
-            qs(".header").classList.add("light");
-        }
-    });
     // Add event listener to each of number in number container
     for (let i = 0; i < id("number-container").children.length; i++) {
         id("number-container").children[i].addEventListener("click", function() {
@@ -233,23 +207,19 @@ function endGame() {
         var s = t[1];
         if (lives == 0 || (parseInt(m, 10) == 0 && parseInt(s, 10) == 0)) {
             var x = id("snackbar-lose");
-            var audio = new Audio('./audio/audio-lose.wav');
-            title_txt = "GAME OVER.😮";
+            title_txt = "Perdu.😮";
         } else {
             var x = id("snackbar-win");
-            var audio = new Audio('./audio/audio-win.wav');
-            title_txt = "Congrats!🎉";
+            title_txt = "Bravo!🎉";
         }
     } else if (timerType == "stopwatch") {
         cancelAnimationFrame(stopwatch);
         if (lives == 0) {
             var x = id("snackbar-lose");
-            var audio = new Audio('./audio/audio-lose.wav');
-            title_txt = "GAME OVER.😮";
+            title_txt = "Perdu.😮";
         } else {
             var x = id("snackbar-win");
-            var audio = new Audio('./audio/audio-win.wav');
-            title_txt = "Congrats!🎉";
+            title_txt = "Bravo!🎉";
         }
     }
     audio.play();
@@ -259,7 +229,7 @@ function endGame() {
     }, 2999);
     swal({
         title: title_txt,
-        text: "Try again? Press 'New game!' or 'Refresh/Restart puzzle' button.🚀",
+        text: "Tu veux essayer encore ? Appuie sur 'Nouvelle Partie!' ou 'Rafraichir/Relancer le sudoku' .🚀",
         icon: "info",
     });
     // Set button accessibility
@@ -389,9 +359,9 @@ function clearPrevious() {
 
 function displayLives(lives) {
     if (lives == 0) {
-        id("lives").textContent = "Lives: 0";
+        id("lives").textContent = "Vie: 0";
     } else {
-        id("lives").textContent = "Lives: " + "🖤".repeat(lives);
+        id("lives").textContent = "Vie: " + "🖤".repeat(lives);
     }
 }
 
@@ -429,8 +399,8 @@ function show_solution() {
     id("resume-btn").disabled = true;
     // Display message to the user
     swal({
-        title: "Try again?😉",
-        text: "Press 'New game!' or 'Refresh/Restart puzzle' button.🚀",
+        title: "Réessaye?😉",
+        text: "Appuie sur 'Nouvelle Partie!' ou 'Rafraichir/Relancer le sudoku'.🚀",
         icon: "info",
     });
 }
