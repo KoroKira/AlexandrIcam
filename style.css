@@ -37,6 +37,26 @@ body.red-filter-active::before {
   pointer-events: none; /* Ajout de cette ligne */
 }
 
+/* Styles pour les écrans de taille moyenne (tablets) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  header {
+    padding: 5px 0;
+  }
+}
+
+/* Styles pour les petits écrans (mobile phones) */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  header {
+    padding: 2px 0;
+  }
+}
+
 
 
 header {
