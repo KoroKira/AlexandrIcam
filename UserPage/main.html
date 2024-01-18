@@ -11,11 +11,14 @@
     body {
       overflow-x: hidden;
       overflow-y: hidden;
+      margin: 0; /* Ajout d'une marge de 0 pour enlever l'espace par défaut du corps de la page */
     }
 
     #myIframe {
-      width: 33.33%;
-      height: 100%;
+      width: 33.33vw; /* Utilisation de la vue en largeur (viewport width) pour définir la largeur en pourcentage de la largeur de la fenêtre */
+      height: 100vh; /* Utilisation de la vue en hauteur (viewport height) pour définir la hauteur en pourcentage de la hauteur de la fenêtre */
+      border: none; /* Suppression de la bordure du cadre iframe */
+      display: block; /* Modification de l'affichage pour qu'il soit en bloc et occupe toute la largeur disponible */
     }
 
   </style>
