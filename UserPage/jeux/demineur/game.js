@@ -69,7 +69,7 @@ Game.prototype.bindEvents = function () {
   var cells = document.getElementsByClassName('cell')
 
   Array.prototype.forEach.call(cells, function (target) {
-    // clicking on a cell and revealing cell
+    // cliquer sur une cellule et la révéler
     target.addEventListener('click', function (evt) {
       if (!target.isMasked || target.isFlagged) return
       if (document.getElementsByClassName('unmasked').length === 0) {
@@ -93,7 +93,7 @@ Game.prototype.bindEvents = function () {
       that.game()
     })
 
-    // double clicking on a cell and opening the cell and all 8 of its neighbors
+    // Double-clic sur une cellule ouvrira la cellule et ses 8 voisines.
     target.addEventListener('dblclick', function () {
       if (target.isFlagged) return
       that.moveIt()
@@ -103,7 +103,7 @@ Game.prototype.bindEvents = function () {
       that.game()
     })
 
-    // marking a cell as a potential bomb
+    // Marquer une cellule comme une bombe potentielle.
     target.addEventListener('contextmenu', function (evt) {
       var emoji
       evt.preventDefault()
@@ -124,7 +124,7 @@ Game.prototype.bindEvents = function () {
       that.updateBombsLeft()
     })
 
-    // support to HOLD to mark bomb, works in Android by default
+    // Support pour MAINTENIR pour marquer une bombe, fonctionne par défaut sur Android.
     if (iDevise) {
       target.addEventListener('touchstart', function (evt) {
         that.holding = setTimeout(function () {
@@ -176,7 +176,7 @@ Game.prototype.restart = function (usetwemoji) {
 
 Game.prototype.resetMetadata = function () {
   document.getElementById('timer').textContent = '0.00'
-  document.querySelector('.wrapper').classList.remove('won', 'lost')
+  document.querySelector('.wrapper').classList.remove('gagné', 'perdu')
   document.querySelector('.result-emoji').textContent = ''
   document.querySelector('.default-emoji').innerHTML = this.usetwemoji ? twemoji.parse('😀') : '😀'
   document.querySelector('.js-settings').innerHTML = this.usetwemoji ? twemoji.parse('🔧') : '🔧'
@@ -201,7 +201,7 @@ Game.prototype.mine = function (bomb) {
   if (bomb) base.isBomb = true
   base.reveal = function (won) {
     var emoji = base.isBomb ? (won ? that.emojiset[2] : that.emojiset[1]) : that.numbermoji[base.mine_count]
-    var text = base.isBomb ? (won ? "Bomb discovered" : "Boom!") : (base.mine_count === 0 ? "Empty field" : base.mine_count + " bombs nearby")
+    var text = base.isBomb ? (won ? "Bombes découvertes" : "Boom!") : (base.mine_count === 0 ? "Terrain vide" : base.mine_count + " bombes proches")
     this.childNodes[0].remove()
     this.setAttribute('aria-label', text)
     this.appendChild(emoji.cloneNode())
@@ -291,9 +291,9 @@ Game.prototype.updateFeedback = function (text) {
 Game.prototype.showMessage = function () {
   clearInterval(this.timer)
   var seconds = ((new Date() - this.startTime) / 1000).toFixed(2)
-  var winner = this.result === 'won'
+  var winner = this.result === 'gagné'
   var emoji = winner ? '😎' : '😵'
-  this.updateFeedback(winner ? "Yay, you won!" : "Boom! you lost.")
+  this.updateFeedback(winner ? "bravo, tu as gagné!" : "Boom! tu as perdu.")
   document.querySelector('.wrapper').classList.add(this.result)
   document.getElementById('timer').textContent = seconds
   document.getElementById('result').innerHTML = this.usetwemoji ? twemoji.parse(emoji) : emoji
