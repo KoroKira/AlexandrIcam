@@ -157,11 +157,11 @@ Game.prototype.game = function () {
 
   if (bombs.length > 0) {
     Array.prototype.forEach.call(masked, function (cell) { cell.reveal() })
-    this.result = 'lost'
+    this.result = 'perdu'
     this.showMessage()
   } else if (masked.length === this.number_of_bombs) {
     Array.prototype.forEach.call(masked, function (cell) { cell.reveal(true) })
-    this.result = 'won'
+    this.result = 'gagné'
     this.showMessage()
   }
 }
@@ -291,16 +291,10 @@ Game.prototype.updateFeedback = function (text) {
 Game.prototype.showMessage = function () {
   clearInterval(this.timer)
   var seconds = ((new Date() - this.startTime) / 1000).toFixed(2)
-  var winner = this.result === 'gagné'
+  var winner = this.result === 'win'
   var emoji = winner ? '😎' : '😵'
   this.updateFeedback(winner ? "bravo, tu as gagné!" : "Boom! tu as perdu.")
   document.querySelector('.wrapper').classList.add(this.result)
   document.getElementById('timer').textContent = seconds
   document.getElementById('result').innerHTML = this.usetwemoji ? twemoji.parse(emoji) : emoji
 }
-
-// console documentation
-
-console.log('Use: `new Game(cols, rows, bombs, [emptyemoji, bombemoji, flagemoji, starteremoji], twemojiOrNot)` to start a new game with customizations.')
-console.log(' Eg: `game = new Game(10, 10, 10, ["🌱", "💥", "🚩", "◻️"], false)`')
-console.log(' Or: `game = new Game(16, 16, 30, ["🐣", "💣", "🚧", "◻️"], true)`')
