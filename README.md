@@ -2,6 +2,7 @@
 # AlexandrIcam
 
 Ce projet a comme titre une parodie d'association, et je ne cherche pas à nuire à l'image de l'école ou autre, juste à être utile en faisant une blague au niveau du nom.
+Merci beaucoup Smaug pour le nom du site, en toute honnêteté j'ai tout pompé de ton site, je l'ai juste adapté. Je n'ai pas de mérite
 
 
 

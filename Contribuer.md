@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Contribuer à Cours-CommunistIcam
+# Contribuer à AlexandrIcam
 
 Cette description est totalement stolen d'une docu et traduite en anglais mdr, j'ai la flemme de checker mais tranquille
 Tout d'abord, merci de prendre le temps de contribuer ! ❤️
@@ -29,17 +29,17 @@ Tous types de contributions sont encouragés et appréciés. Consultez la [Table
 
 ## Code de conduite
 
-Ce projet et toutes les personnes qui y participent sont régis par le [Code de conduite de Cours-CommunistIcam](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/CODE_OF_CONDUCT.md). En participant, vous vous engagez à respecter ce code. Veuillez signaler tout comportement inacceptable à <>.
+Ce projet et toutes les personnes qui y participent sont régis par le [Code de conduite de AlexandrIcam](https://github.com/KoroKira/AlexandrIcam/blob/main/CODE_OF_CONDUCT.md). En participant, vous vous engagez à respecter ce code. Veuillez signaler tout comportement inacceptable à <>.
 
 ## J'ai une question
 
-> Si vous avez une question, nous partons du principe que vous avez lu la [Documentation](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/documentation.md) disponible.
+> Si vous avez une question, nous partons du principe que vous avez lu la [Documentation](https://github.com/KoroKira/AlexandrIcam/blob/main/documentation.md) disponible.
 
-Avant de poser une question, il est préférable de rechercher des [Issues](https://github.com/KoroKira/Cours-CommunistIcam/issues) existantes qui pourraient vous aider. Si vous trouvez une issue appropriée et avez encore besoin de clarification, vous pouvez écrire votre question dans cette issue. Il est également conseillé de rechercher des réponses sur Internet en premier.
+Avant de poser une question, il est préférable de rechercher des [Issues](https://github.com/KoroKira/AlexandrIcam/issues) existantes qui pourraient vous aider. Si vous trouvez une issue appropriée et avez encore besoin de clarification, vous pouvez écrire votre question dans cette issue. Il est également conseillé de rechercher des réponses sur Internet en premier.
 
 Si vous avez toujours besoin de poser une question et d'obtenir des éclaircissements, nous vous recommandons ce qui suit :
 
-- Ouvrez une [Issue](https://github.com/KoroKira/Cours-CommunistIcam/issues/new).
+- Ouvrez une [Issue](https://github.com/KoroKira/AlexandrIcam/issues/new).
 - Fournissez autant de contexte que possible sur ce que vous rencontrez.
 - Fournissez les versions du projet et de la plateforme (nodejs, npm, etc.), selon ce qui semble pertinent.
 
@@ -73,8 +73,8 @@ En fonction de la taille du projet, vous voudrez peut-être externaliser les que
 Un bon rapport de bogue ne doit pas laisser les autres chercher des informations supplémentaires. Nous vous demandons donc de faire des recherches attentives, de collecter des informations et de décrire le problème en détail dans votre rapport. Veuillez effectuer les étapes suivantes à l'avance pour nous aider à corriger tout bogue potentiel aussi rapidement que possible.
 
 - Assurez-vous d'utiliser la dernière version.
-- Déterminez si votre bogue est vraiment un bogue et non une erreur de votre part, par exemple en utilisant des composants ou des versions d'environnement incompatibles (assurez-vous d'avoir lu la [documentation](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/documentation.md). Si vous cherchez du support, vous voudrez peut-être vérifier [cette section](#i-have-a-question)).
-- Pour voir si d'autres utilisateurs ont rencontré (et potentiellement déjà résolu) le même problème que vous, vérifiez s'il existe déjà un rapport de bogue pour votre bogue ou erreur dans le [bug tracker](https://github.com/KoroKira/Cours-CommunistIcam/issues?q=label%3Abug).
+- Déterminez si votre bogue est vraiment un bogue et non une erreur de votre part, par exemple en utilisant des composants ou des versions d'environnement incompatibles (assurez-vous d'avoir lu la [documentation](https://github.com/KoroKira/AlexandrIcam/blob/main/documentation.md). Si vous cherchez du support, vous voudrez peut-être vérifier [cette section](#i-have-a-question)).
+- Pour voir si d'autres utilisateurs ont rencontré (et potentiellement déjà résolu) le même problème que vous, vérifiez s'il existe déjà un rapport de bogue pour votre bogue ou erreur dans le [bug tracker](https://github.com/KoroKira/AlexandrIcam/issues?q=label%3Abug).
 - Assurez-vous également de rechercher sur Internet (y compris Stack Overflow) pour voir si des utilisateurs en dehors de la communauté GitHub ont discuté du problème.
 - Collectez des informations sur le bogue :
 - Trace de la pile (traceback)
@@ -91,7 +91,7 @@ Un bon rapport de bogue ne doit pas laisser les autres chercher des informations
 
 Nous utilisons les issues GitHub pour suivre les bugs et erreurs. Si vous rencontrez un problème avec le projet :
 
-- Ouvrez une [Issue](https://github.com/KoroKira/Cours-CommunistIcam/issues/new). (Étant donné que nous ne pouvons pas être sûrs à ce stade s'il s'agit d'un bogue ou non, nous vous demandons de ne pas parler d'un bogue et de ne pas étiqueter l'issue.)
+- Ouvrez une [Issue](https://github.com/KoroKira/AlexandrIcam/issues/new). (Étant donné que nous ne pouvons pas être sûrs à ce stade s'il s'agit d'un bogue ou non, nous vous demandons de ne pas parler d'un bogue et de ne pas étiqueter l'issue.)
 - Expliquez le comportement que vous attendez et le comportement réel.
 - Fournissez autant de contexte que possible et décrivez les *étapes de reproduction* qu'une autre personne peut suivre pour recréer le problème de manière indépendante. Cela inclut généralement votre code. Pour de bons rapports de bogues, vous devez isoler le problème et créer un cas de test réduit.
 - Fournissez les informations que vous avez collectées dans la section précédente.
@@ -107,26 +107,26 @@ Une fois l'issue ouverte :
 
 ### Suggérer des améliorations
 
-Cette section vous guide à travers la soumission d'une suggestion d'amélioration pour Cours-CommunistIcam, **y compris les nouvelles fonctionnalités et les améliorations mineures de la fonctionnalité existante**. Suivre ces directives aidera les mainteneurs et la communauté à comprendre votre suggestion et à trouver des suggestions connexes.
+Cette section vous guide à travers la soumission d'une suggestion d'amélioration pour AlexandrIcam, **y compris les nouvelles fonctionnalités et les améliorations mineures de la fonctionnalité existante**. Suivre ces directives aidera les mainteneurs et la communauté à comprendre votre suggestion et à trouver des suggestions connexes.
 
 <!-- omit in toc -->
 #### Avant de soumettre une amélioration
 
 - Assurez-vous d'utiliser la dernière version.
-- Lisez attentivement la [documentation](https://github.com/KoroKira/Cours-CommunistIcam/blob/main/documentation.md) et découvrez si la fonctionnalité est déjà couverte, peut-être par une configuration individuelle.
-- Effectuez une [recherche](https://github.com/KoroKira/Cours-CommunistIcam/issues) pour voir si l'amélioration a déjà été suggérée. Si c'est le cas, ajoutez un commentaire à l'issue existante au lieu d'en ouvrir une nouvelle.
+- Lisez attentivement la [documentation](https://github.com/KoroKira/AlexandrIcam/blob/main/documentation.md) et découvrez si la fonctionnalité est déjà couverte, peut-être par une configuration individuelle.
+- Effectuez une [recherche](https://github.com/KoroKira/AlexandrIcam/issues) pour voir si l'amélioration a déjà été suggérée. Si c'est le cas, ajoutez un commentaire à l'issue existante au lieu d'en ouvrir une nouvelle.
 - Découvrez si votre idée correspond à la portée et aux objectifs du projet. C'est à vous de faire valoir le bien-fondé de cette fonctionnalité aux développeurs du projet. Gardez à l'esprit que nous voulons des fonctionnalités qui seront utiles à la majorité de nos utilisateurs et pas seulement à une petite partie. Si vous ciblez simplement une minorité d'utilisateurs, envisagez d'écrire une bibliothèque d'extension/plugin.
 
 <!-- omit in toc -->
 #### Comment soumettre une bonne suggestion d'amélioration ?
 
-Les suggestions d'amélioration sont suivies sous forme [d'issues GitHub](https://github.com/KoroKira/Cours-CommunistIcam/issues).
+Les suggestions d'amélioration sont suivies sous forme [d'issues GitHub](https://github.com/KoroKira/AlexandrIcam/issues).
 
 - Utilisez un **titre clair et descriptif** pour l'issue afin d'identifier la suggestion.
 - Fournissez une **description étape par étape de l'amélioration suggérée** aussi en détail que possible.
 - **Décrivez le comportement actuel** et **expliquez quel comportement vous vous attendiez à voir à la place** et pourquoi. À ce stade, vous pouvez également indiquer quelles alternatives ne fonctionnent pas pour vous.
 - Vous voudrez peut-être **inclure des captures d'écran et des GIF animés** qui vous aident à démontrer les étapes ou à indiquer la partie à laquelle la suggestion est liée. Vous pouvez utiliser [cet outil](https://www.cockos.com/licecap/) pour enregistrer des GIF sur macOS et Windows, et [cet outil](https://github.com/colinkeenan/silentcast) ou [cet outil](https://github.com/GNOME/byzanz) sur Linux. <!-- cela ne devrait être inclus que si le projet a une interface graphique -->
-- **Expliquez pourquoi cette amélioration serait utile** pour la plupart des utilisateurs de Cours-CommunistIcam. Vous voudrez peut-être également mentionner les autres projets qui l'ont mieux résolu et qui pourraient servir d'inspiration.
+- **Expliquez pourquoi cette amélioration serait utile** pour la plupart des utilisateurs de AlexandrIcam. Vous voudrez peut-être également mentionner les autres projets qui l'ont mieux résolu et qui pourraient servir d'inspiration.
 
 <!-- Vous voudrez peut-être créer un modèle d'issue pour les suggestions d'amélioration qui peut être utilisé comme guide et qui définit la structure des informations à inclure. Si vous le faites, référencez-le ici dans la description. -->
 
