@@ -1,5 +1,5 @@
 
-# CommunistIcam
+# AlexandrIcam
 
 Ce projet a comme titre une parodie d'association, et je ne cherche pas à nuire à l'image de l'école ou autre, juste à être utile en faisant une blague au niveau du nom.
 
@@ -37,7 +37,7 @@ S'il vous plait, adhérez au `code de conduite` du projet.
 
 ## Feedback
 
-Si vous avez des feedback à faire, merci de me contacter sur la page instagram [@communisticam](https://www.instagram.com/communisticam)
+Si vous avez des feedback à faire, merci de me contacter sur la page instagram [@alexandricam](https://www.instagram.com/alexandricam)
 
 
 ## API
