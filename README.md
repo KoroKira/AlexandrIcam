@@ -1,4 +1,3 @@
-
 # AlexandrIcam
 
 Ce projet a comme titre une parodie d'association, et je ne cherche pas à nuire à l'image de l'école ou autre, juste à être utile en faisant une blague au niveau du nom.
@@ -47,4 +46,4 @@ On a pas encore d'API, mais lorsque le site grandira, on en fera surement une
 ## Auteurs
 
 - [Guilhem Desarcy-Lemiere](https://www.github.com/KoroKira)
-- [CodIcam]()
+- [CodIcam](https://github.com/CodIcam-Toulouse)
