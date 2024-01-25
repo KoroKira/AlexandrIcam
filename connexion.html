@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
+<link rel="stylesheet" href="style.css"> <!-- attention au lien inter documents pour choper le css !!! ../ à rajouter pour chaque dossier-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion</title>
+  <title>AlexandrIcam - Connexion</title>
   <script>
     function validateEmail() {
       var email = document.getElementById("email").value.trim();
@@ -54,7 +55,7 @@
         "Continuez à explorer nos fonctionnalités avancées."
       ];
       var randomMessage = messages[Math.floor(Math.random() * messages.length)];
-      alert(randomMessage);
+      console.log(randomMessage);
     }
 
     function performUselessCalculations() {
