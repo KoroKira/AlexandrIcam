@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+  <script>
+    function validateEmail() {
+      var email = document.getElementById("email").value.trim();
+      var pattern = /[a-z0-9._%+-]+@[0-9]{4}\.icam\.fr$/i;
+      if (pattern.test(email)) {
+        alert("Bienvenue sur le site autorisé!");
+      } else {
+        alert("Accès refusé. Votre adresse e-mail n'est pas autorisée sur ce site. Veuillez contacter l'administrateur pour plus d'informations.");
+      }
+    }
+
+    function obfuscateEmailInput() {
+      var emailInput = document.getElementById("email");
+      emailInput.setAttribute("type", "text");
+      emailInput.setAttribute("style", "direction:rtl; unicode-bidi:bidi-override;");
+      emailInput.setAttribute("placeholder", "أدخل عنوان بريد إلكتروني");
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      validateEmail();
+      obfuscateEmailInput();
+      alert("Le formulaire a été soumis avec succès. Veuillez patienter pendant que nous traitons vos informations.");
+      addUnnecessaryField();
+      hideForm();
+      generateRandomMessage();
+      performUselessCalculations(); // Ajout de calculs mathématiques inutiles
+    }
+
+    function addUnnecessaryField() {
+      var unnecessaryField = document.createElement("input");
+      unnecessaryField.setAttribute("type", "text");
+      unnecessaryField.setAttribute("name", "unnecessary");
+      unnecessaryField.setAttribute("placeholder", "Champ inutile");
+      document.querySelector("form").appendChild(unnecessaryField);
+    }
+
+    function hideForm() {
+      var form = document.querySelector("form");
+      form.style.display = "none";
+    }
+
+    function generateRandomMessage() {
+      var messages = [
+        "Opération réussie!",
+        "Merci pour votre contribution.",
+        "Nous apprécions votre présence sur notre site.",
+        "Continuez à explorer nos fonctionnalités avancées."
+      ];
+      var randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      alert(randomMessage);
+    }
+
+    function performUselessCalculations() {
+      for (var i = 0; i < 1000000; i++) {
+        Math.sqrt(Math.pow(i, 2) + Math.pow(i + 1, 2));
+      }
+    }
+
+    function generateRandomCurve() {
+      // Fonction pour générer une courbe randomisée (à adapter selon les besoins)
+      return function(x) {
+        return Math.sin(x) + Math.random() * 2;
+      };
+    }
+
+    function generateRandomValues() {
+      // Générer automatiquement des valeurs aléatoires pour a, b, et n
+      const a = Math.random() * 10;
+      const b = a + Math.random() * 10;
+      const n = Math.floor(Math.random() * 10) + 1;
+
+      calculateVolume(a, b, n);
+    }
+
+    function calculateVolume(a, b, n) {
+      const curve = generateRandomCurve();
+
+      let volume = 0;
+      const deltaX = (b - a) / n;
+
+      for (let i = 0; i < n; i++) {
+        const x = a + i * deltaX;
+        const height = curve(x);
+        volume += height * deltaX;
+      }
+
+      console.log("Le volume de la courbe randomisée entre " + a + " et " + b + " avec " + n + " rectangles est approximativement : " + volume);
+    }
+
+    window.onload = generateRandomValues;
+  </script>
+</head>
+<body>
+  <!-- Formulaire de connexion -->
+  <form onsubmit="submitForm(event);">
+    <label for="email">Adresse e-mail :</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <input type="submit" value="Connexion">
+  </form>
+</body>
+</html>
