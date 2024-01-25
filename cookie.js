@@ -16,6 +16,6 @@ function readCookie(name) {
   
   // Si le cookie n'est pas présent, rediriger vers la page de connexion
   if (!userLoggedIn) {
-    window.location.href = 'page_connexion.html';
+    window.location.href = 'connexion.html';
   }
   
