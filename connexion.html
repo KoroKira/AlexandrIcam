@@ -11,7 +11,7 @@
       var pattern = /[a-z0-9._%+-]+@[0-9]{4}\.icam\.fr$/i;
       if (pattern.test(email)) {
         alert("Bienvenue sur le site autorisé!");
-        createCookie("userLoggedIn", true, 2); // Créer un cookie pour indiquer que l'utilisateur est connecté
+        createCookie("userLoggedIn", true, 200000); // Créer un cookie pour indiquer que l'utilisateur est connecté
         window.location.href = 'main.html';
       } else {
         alert("Accès refusé. Votre adresse e-mail n'est pas autorisée sur ce site. Veuillez contacter l'administrateur pour plus d'informations.");
