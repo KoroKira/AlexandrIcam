@@ -100,12 +100,12 @@ bindEvents() {
       if (!target.isMasked) { return; }
       if (target.isFlagged) {
         target.setAttribute('aria-label','Field')
-        that.updateFeedback('Unflagged as potential bomb');
+        that.updateFeedback('Retire le drapeau');
         emoji = that.emojiset[3].cloneNode();
         target.isFlagged = false;
       } else {
-        target.setAttribute('aria-label', 'Flagged as potential bomb');
-        that.updateFeedback('Flagged as potential bomb');
+        target.setAttribute('aria-label', 'Mise du drapeau');
+        that.updateFeedback('Mise du drapeau');
         emoji = that.emojiset[2].cloneNode();
         target.isFlagged = true;
       }
@@ -181,7 +181,7 @@ mine(bomb) {
   if (bomb) base.isBomb = true;
   base.reveal = function (won) {
     var emoji = base.isBomb ? (won ? that.emojiset[2] : that.emojiset[1]) : that.numbermoji[base.mine_count];
-    var text = base.isBomb ? (won ? "Bomb discovered" : "Boom!") : (base.mine_count === 0 ? "Empty field" : base.mine_count + " bombs nearby");
+    var text = base.isBomb ? (won ? "Bombe découverte" : "Boom!") : (base.mine_count === 0 ? "Champ vide" : base.mine_count + " bombes proches");
     this.childNodes[0].remove();
     this.setAttribute('aria-label', text);
     this.appendChild(emoji.cloneNode());
@@ -274,7 +274,7 @@ showMessage() {
   var seconds = ((new Date() - this.startTime) / 1000).toFixed(2);
   var winner = this.result === 'won';
   var emoji = winner ? '😎' : '😵';
-  this.updateFeedback(winner ? "Yay, you won!" : "Boom! you lost.");
+  this.updateFeedback(winner ? "Bravo tu as gagné!" : "Boom! perdu.");
   document.querySelector('.wrapper').classList.add(this.result);
   document.getElementById('timer').textContent = seconds;
   document.getElementById('result').innerHTML = this.usetwemoji ? twemoji.parse(emoji) : emoji;
