@@ -134,11 +134,11 @@ game() {
 
   if (bombs.length > 0) {
     Array.prototype.forEach.call(masked, function (cell) { cell.reveal(); });
-    this.result = 'lost';
+    this.result = 'perdu';
     this.showMessage();
   } else if (masked.length === this.number_of_bombs) {
     Array.prototype.forEach.call(masked, function (cell) { cell.reveal(true) ;});
-    this.result = 'won';
+    this.result = 'gagné';
     this.showMessage();
   }
 }
@@ -154,7 +154,7 @@ restart(usetwemoji) {
 
 resetMetadata () {
   document.getElementById('timer').textContent = '0.00';
-  document.querySelector('.wrapper').classList.remove('won', 'lost');
+  document.querySelector('.wrapper').classList.remove('gagné', 'perdu');
   document.querySelector('.result-emoji').textContent = '';
   document.querySelector('.default-emoji').innerHTML = this.usetwemoji ? twemoji.parse('😀') : '😀';
   document.querySelector('.js-settings').innerHTML = this.usetwemoji ? twemoji.parse('🔧') : '🔧';
@@ -253,12 +253,12 @@ shuffle(array) {
 }
 moveIt(zero) {
   zero ? this.moves = 0 : this.moves++;
-  document.getElementById('moves').textContent = this.moves;
+  document.getElementById('coups').textContent = this.moves;
 }
 
 updateBombsLeft() {
   var flagged = Array.prototype.filter.call(document.getElementsByClassName('cell'), function (target) { return target.isFlagged });
-  document.getElementById('bombs-left').textContent = `${this.number_of_bombs - flagged.length}/${this.number_of_bombs}`;
+  document.getElementById('bombes restantes').textContent = `${this.number_of_bombs - flagged.length}/${this.number_of_bombs}`;
 }
 
 //Update hints after every move
@@ -272,7 +272,7 @@ updateFeedback(text) {
 showMessage() {
   clearInterval(this.timer);
   var seconds = ((new Date() - this.startTime) / 1000).toFixed(2);
-  var winner = this.result === 'won';
+  var winner = this.result === 'gagné';
   var emoji = winner ? '😎' : '😵';
   this.updateFeedback(winner ? "Bravo tu as gagné!" : "Boom! perdu.");
   document.querySelector('.wrapper').classList.add(this.result);
