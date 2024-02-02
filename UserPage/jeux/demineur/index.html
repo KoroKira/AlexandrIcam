@@ -21,6 +21,7 @@
         aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <a href="../../main.html">Accueil</a>
     </nav>
   </header>
   <main>
@@ -160,7 +161,7 @@
     function restart() {
       clearInterval(game.timer)
       game = new mineSweeper(cols.value, rows.value, bombs.value, emojiset, true)
-      game.updateFeedback('Game restarted');
+      game.updateFeedback('Partie relancée');
       return false
     }
   </script>
