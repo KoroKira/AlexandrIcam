@@ -1,4 +1,4 @@
-# Code de Conduite - Cours-CommunistIcam
+# Code de Conduite - AlexandrIcam
 
 ## Notre Engagement
 
