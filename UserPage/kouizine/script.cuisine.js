@@ -1,6 +1,6 @@
 // Fonction pour charger les recettes depuis un fichier JSON
 function chargerRecettes() {
-    fetch('recettes.json')
+    fetch('recettes.txt')
         .then(response => response.json())
         .then(recettes => afficherRecettes(recettes))
         .catch(error => console.error('Erreur de chargement des recettes :', error));
