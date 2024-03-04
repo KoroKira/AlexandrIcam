@@ -1,4 +1,4 @@
-// Fonction pour charger les recettes depuis un fichier texte
+// Fonction pour charger les recettes depuis un fichier JSON
 function chargerRecettes() {
     fetch('recettes.json')
         .then(response => response.json())
@@ -13,7 +13,7 @@ function afficherRecettes(recettes) {
     recettes.forEach(recette => {
         const divRecette = document.createElement('div');
         divRecette.classList.add('recette');
-        divRecette.onclick = function() {
+        divRecette.onclick = function () {
             afficherRecette(recette);
         };
 
@@ -59,14 +59,17 @@ function afficherRecette(recette) {
             ${recette.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
         </ol>
     `;
+    document.getElementById("retour").style.display = "block"; // Affiche le bouton Retour
     sectionRecetteDetail.style.display = 'block';
 }
 
 // Fonction pour revenir à la liste des recettes
 function retourRecettes() {
-    document.getElementById("recette-detail").style.display = "none";
-    document.getElementById("retour").style.display = "none";
-    document.getElementById("recettes").style.display = "flex";
+    const sectionRecettes = document.getElementById('recettes');
+    const sectionRecetteDetail = document.getElementById('recette-detail');
+    sectionRecetteDetail.innerHTML = '';  // Efface le contenu des détails de la recette
+    sectionRecettes.style.display = 'flex';
+    document.getElementById("retour").style.display = "none";  // Cache le bouton Retour
 }
 
 // Charger les recettes lors du chargement de la page
