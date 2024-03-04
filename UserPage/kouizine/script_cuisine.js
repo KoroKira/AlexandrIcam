@@ -210,5 +210,5 @@ document.querySelector('.recette:nth-child(2)').addEventListener('click', () => 
 document.querySelector('.recette:nth-child(3)').addEventListener('click', () => afficherRecette('risotto_aux_champignons'));
 document.querySelector('.recette:nth-child(4)').addEventListener('click', () => afficherRecette('pizza_margherita'));
 document.querySelector('.recette:nth-child(5)').addEventListener('click', () => afficherRecette('poulet_au_citron'));
-// ...
+// ...// ...
 
