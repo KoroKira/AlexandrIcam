@@ -1,0 +1,30 @@
+[
+    {
+        "nom": "Pâtes à la Carbonara",
+        "personnes": 4,
+        "temps_preparation": "10 minutes",
+        "temps_cuisson": "15 minutes",
+        "ingredients": [
+            "400g de pâtes (spaghetti de préférence)",
+            "150g de guanciale ou de pancetta, coupé en dés",
+            "3 œufs",
+            "100g de fromage Pecorino Romano râpé",
+            "Poivre noir fraîchement moulu"
+        ],
+        "ustensiles": [
+            "Une grande casserole pour cuire les pâtes",
+            "Une poêle pour faire revenir la pancetta",
+            "Un bol pour mélanger les œufs et le fromage"
+        ],
+        "instructions": [
+            "Faites cuire les pâtes dans de l'eau salée selon les instructions de l'emballage.",
+            "Pendant ce temps, faites revenir la pancetta dans une poêle jusqu'à ce qu'elle soit croustillante.",
+            "Dans un bol, battez les œufs et mélangez-les avec le fromage Pecorino Romano.",
+            "Égouttez les pâtes et ajoutez-les à la poêle avec la pancetta. Mélangez bien.",
+            "Retirez la poêle du feu et ajoutez le mélange d'œufs et de fromage. Remuez rapidement pour enrober les pâtes.",
+            "Assaisonnez avec du poivre noir fraîchement moulu.",
+            "Servez immédiatement et ajoutez du fromage supplémentaire si désiré."
+        ]
+    },
+    // Ajoutez d'autres recettes de la même manière
+]

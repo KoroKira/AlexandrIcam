@@ -1,49 +1,65 @@
-// Fonction pour afficher la recette détaillée
-function afficherRecette(nomRecette) {
-    // Vérifiez la recette sélectionnée
-    if (nomRecette === 'pate_carbonara') {
-        // Remplacez le contenu du détail de la recette avec la recette spécifique
-        document.getElementById("recette-detail").innerHTML = `
-            <button id="retour" onclick="retourRecettes()">Retour</button>
-            <h2>Pâtes à la Carbonara</h2>
-            <p><strong>Nombre de personnes :</strong> 4</p>
-            <p><strong>Temps de préparation :</strong> 10 minutes</p>
-            <p><strong>Temps de cuisson :</strong> 15 minutes</p>
-            
-            <h3>Ingrédients :</h3>
-            <ul>
-                <li>400g de pâtes (spaghetti de préférence)</li>
-                <li>150g de guanciale ou de pancetta, coupé en dés</li>
-                <li>3 œufs</li>
-                <li>100g de fromage Pecorino Romano râpé</li>
-                <li>Poivre noir fraîchement moulu</li>
-            </ul>
-            
-            <h3>Ustensiles :</h3>
-            <ul>
-                <li>Une grande casserole pour cuire les pâtes</li>
-                <li>Une poêle pour faire revenir la pancetta</li>
-                <li>Un bol pour mélanger les œufs et le fromage</li>
-            </ul>
-            
-            <h3>Instructions :</h3>
-            <ol>
-                <li>Faites cuire les pâtes dans de l'eau salée selon les instructions de l'emballage.</li>
-                <li>Pendant ce temps, faites revenir la pancetta dans une poêle jusqu'à ce qu'elle soit croustillante.</li>
-                <li>Dans un bol, battez les œufs et mélangez-les avec le fromage Pecorino Romano.</li>
-                <li>Égouttez les pâtes et ajoutez-les à la poêle avec la pancetta. Mélangez bien.</li>
-                <li>Retirez la poêle du feu et ajoutez le mélange d'œufs et de fromage. Remuez rapidement pour enrober les pâtes.</li>
-                <li>Assaisonnez avec du poivre noir fraîchement moulu.</li>
-                <li>Servez immédiatement et ajoutez du fromage supplémentaire si désiré.</li>
-            </ol>
-        `;
+// Fonction pour charger les recettes depuis un fichier texte
+function chargerRecettes() {
+    fetch('recettes.json')
+        .then(response => response.json())
+        .then(recettes => afficherRecettes(recettes))
+        .catch(error => console.error('Erreur de chargement des recettes :', error));
+}
 
-        // Affiche le détail de la recette
-        document.getElementById("recette-detail").style.display = "block";
-        document.getElementById("retour").style.display = "block";
-        document.getElementById("recettes").style.display = "none";
-    }
-    // Ajoutez des conditions pour d'autres recettes si nécessaire
+// Fonction pour afficher les recettes sur la page HTML
+function afficherRecettes(recettes) {
+    const sectionRecettes = document.getElementById('recettes');
+
+    recettes.forEach(recette => {
+        const divRecette = document.createElement('div');
+        divRecette.classList.add('recette');
+        divRecette.onclick = function() {
+            afficherRecette(recette);
+        };
+
+        const imgRecette = document.createElement('img');
+        imgRecette.src = recette.image;
+        imgRecette.alt = recette.nom;
+
+        const h2Recette = document.createElement('h2');
+        h2Recette.textContent = recette.nom;
+
+        divRecette.appendChild(imgRecette);
+        divRecette.appendChild(h2Recette);
+
+        sectionRecettes.appendChild(divRecette);
+    });
+}
+
+// Fonction pour afficher les détails d'une recette spécifique
+function afficherRecette(recette) {
+    const sectionRecettes = document.getElementById('recettes');
+    sectionRecettes.style.display = 'none';
+
+    const sectionRecetteDetail = document.getElementById('recette-detail');
+    sectionRecetteDetail.innerHTML = `
+        <button id="retour" onclick="retourRecettes()">Retour</button>
+        <h2>${recette.nom}</h2>
+        <p><strong>Nombre de personnes :</strong> ${recette.personnes}</p>
+        <p><strong>Temps de préparation :</strong> ${recette.temps_preparation}</p>
+        <p><strong>Temps de cuisson :</strong> ${recette.temps_cuisson}</p>
+        
+        <h3>Ingrédients :</h3>
+        <ul>
+            ${recette.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+        </ul>
+        
+        <h3>Ustensiles :</h3>
+        <ul>
+            ${recette.ustensiles.map(ustensile => `<li>${ustensile}</li>`).join('')}
+        </ul>
+        
+        <h3>Instructions :</h3>
+        <ol>
+            ${recette.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+        </ol>
+    `;
+    sectionRecetteDetail.style.display = 'block';
 }
 
 // Fonction pour revenir à la liste des recettes
@@ -52,3 +68,6 @@ function retourRecettes() {
     document.getElementById("retour").style.display = "none";
     document.getElementById("recettes").style.display = "flex";
 }
+
+// Charger les recettes lors du chargement de la page
+window.onload = chargerRecettes;
