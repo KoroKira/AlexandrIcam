@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="styles.cuisine.css">
+    <title>Recettes de Cuisine</title>
+</head>
+<body>
+
+    <header>
+        <h1>Recettes de Cuisine</h1>
+    </header>
+
+    <section id="recettes">
+        <!-- Chaque recette aura une vignette/image cliquable -->
+        <div class="recette" onclick="afficherRecette('pate_carbonara')">
+            <img src="images/carbo.jpg" alt="Pâtes à la carbonara">
+            <h2>Pâtes à la Carbonara</h2>
+        </div>
+
+        <!-- Ajoutez d'autres recettes de la même manière -->
+    </section>
+
+    <section id="recette-detail" class="cache">
+        <!-- Le détail de la recette s'affichera ici -->
+    </section>
+
+    <script src="script.cuisine.js"></script>
+</body>
+</html>
