@@ -1,8 +1,10 @@
+// Fonction pour afficher la recette détaillée
 function afficherRecette(nomRecette) {
     // Vérifiez la recette sélectionnée
     if (nomRecette === 'pate_carbonara') {
         // Remplacez le contenu du détail de la recette avec la recette spécifique
         document.getElementById("recette-detail").innerHTML = `
+            <button id="retour" onclick="retourRecettes()">Retour</button>
             <h2>Pâtes à la Carbonara</h2>
             <p><strong>Nombre de personnes :</strong> 4</p>
             <p><strong>Temps de préparation :</strong> 10 minutes</p>
@@ -38,7 +40,15 @@ function afficherRecette(nomRecette) {
 
         // Affiche le détail de la recette
         document.getElementById("recette-detail").style.display = "block";
+        document.getElementById("retour").style.display = "block";
         document.getElementById("recettes").style.display = "none";
     }
     // Ajoutez des conditions pour d'autres recettes si nécessaire
+}
+
+// Fonction pour revenir à la liste des recettes
+function retourRecettes() {
+    document.getElementById("recette-detail").style.display = "none";
+    document.getElementById("retour").style.display = "none";
+    document.getElementById("recettes").style.display = "flex";
 }
