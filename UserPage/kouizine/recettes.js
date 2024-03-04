@@ -152,63 +152,33 @@ const recettes = [
     ]
 ];
 
-// Fonction pour afficher une recette spécifique
-function afficherRecette(nomRecette) {
-    // Trouver la recette par son nom
-    const recette = recettes.flat().find(rec => rec.nom.toLowerCase().replace(/\s/g, '_') === nomRecette);
+const recipesContainer = document.getElementById('recipesContainer');
 
-    // Vérifier si la recette existe
-    if (recette) {
-        // Cacher la section des recettes
-        document.getElementById('recettes').style.display = 'none';
+recettes.forEach(recipe => {
+    const recipeDiv = document.createElement('div');
+    recipeDiv.className = 'recipe';
 
-        // Afficher la section de détail de la recette
-        const sectionRecetteDetail = document.getElementById('recette-detail');
-        sectionRecetteDetail.classList.remove('cache');
+    recipeDiv.innerHTML = `
+        <h2>${recipe.nom}</h2>
+        <p><strong>Personnes:</strong> ${recipe.personnes}</p>
+        <p><strong>Temps de préparation:</strong> ${recipe.temps_preparation}</p>
+        <p><strong>Temps de cuisson:</strong> ${recipe.temps_cuisson}</p>
 
-        // Afficher le bouton de retour
-        document.getElementById('retour').style.display = 'block';
+        <h3>Ingrédients:</h3>
+        <ul>
+            ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+        </ul>
 
-        // Construire le contenu de la recette
-        const contenuRecette = `
-            <h2>${recette.nom}</h2>
-            <p>Personnes: ${recette.personnes}</p>
-            <p>Temps de préparation: ${recette.temps_preparation}</p>
-            <p>Temps de cuisson: ${recette.temps_cuisson}</p>
-            <h3>Ingrédients :</h3>
-            <ul>${recette.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>
-            <h3>Ustensiles :</h3>
-            <ul>${recette.ustensiles.map(ustensile => `<li>${ustensile}</li>`).join('')}</ul>
-            <h3>Instructions :</h3>
-            <ol>${recette.instructions.map(instruction => `<li>${instruction}</li>`).join('')}</ol>
-        `;
+        <h3>Ustensiles:</h3>
+        <ul>
+            ${recipe.ustensiles.map(ustensile => `<li>${ustensile}</li>`).join('')}
+        </ul>
 
-        // Ajouter le contenu à la section de détail de la recette
-        sectionRecetteDetail.innerHTML = contenuRecette;
-    }
-}
+        <h3>Instructions:</h3>
+        <ol>
+            ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+        </ol>
+    `;
 
-// Fonction pour revenir à la liste des recettes
-function retournerListeRecettes() {
-    // Afficher la section des recettes
-    document.getElementById('recettes').style.display = 'flex';
-
-    // Cacher la section de détail de la recette
-    const sectionRecetteDetail = document.getElementById('recette-detail');
-    sectionRecetteDetail.classList.add('cache');
-
-    // Cacher le bouton de retour
-    document.getElementById('retour').style.display = 'none';
-}
-
-// Ajouter des écouteurs d'événements pour les boutons
-document.getElementById('retour').addEventListener('click', retournerListeRecettes);
-
-// Ajouter des écouteurs d'événements pour chaque recette si nécessaire
-document.querySelector('.recette:nth-child(1)').addEventListener('click', () => afficherRecette('pates_a_la_carbonara'));
-document.querySelector('.recette:nth-child(2)').addEventListener('click', () => afficherRecette('salade_cesar'));
-document.querySelector('.recette:nth-child(3)').addEventListener('click', () => afficherRecette('risotto_aux_champignons'));
-document.querySelector('.recette:nth-child(4)').addEventListener('click', () => afficherRecette('pizza_margherita'));
-document.querySelector('.recette:nth-child(5)').addEventListener('click', () => afficherRecette('poulet_au_citron'));
-// ...// ...
-
+    recipesContainer.appendChild(recipeDiv);
+});

@@ -1,51 +1,22 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="styles.cuisine.css">
     <title>Recettes de Cuisine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .recipe {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
-
-    <header>
-        <h1>Recettes de Cuisine</h1>
-    </header>
-
-    <section id="recettes">
-        <div class="recette" onclick="afficherRecette('pates_a_la_carbonara')">
-            <img src="images/carbo.jpg" alt="Pâtes à la carbonara">
-            <h2>Pâtes à la Carbonara</h2>
-        </div>
-
-        <div class="recette" onclick="afficherRecette('salade_cesar')">
-            <img src="images/saladecesar.jpg" alt="Salade César">
-            <h2>Salade César</h2>
-        </div>
-
-        <div class="recette" onclick="afficherRecette('risotto_aux_champignons')">
-            <img src="images/risotto_champis.jpg" alt="Risotto aux Champignons">
-            <h2>Risotto aux Champignons</h2>
-        </div>
-
-        <div class="recette" onclick="afficherRecette('pizza_margherita')">
-            <img src="images/margherita.jpg" alt="Pizza Margherita">
-            <h2>Pizza Margherita</h2>
-        </div>
-
-        <div class="recette" onclick="afficherRecette('poulet_au_citron')">
-            <img src="images/poulet_citron.jpg" alt="Poulet au Citron">
-            <h2>Poulet au Citron</h2>
-        </div>
-        <!-- Ajoutez d'autres recettes de la même manière -->
-    </section>
-
-    <section id="recette-detail" class="cache">
-        <button id="retour" style="display: none;">Retour</button>
-        <!-- Le détail de la recette s'affichera ici -->
-    </section>
-
-    <script src="script_cuisine.js"></script>
+    <div id="recipesContainer"></div>
+    <script src="recettes.js"></script>
 </body>
 </html>
