@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Night Shift Converter</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <input type="file" id="fileInput" class="form-control mb-3" accept=".pdf">
+        <button onclick="convertToNightShift()" class="btn btn-primary">Convert to Night Shift</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script>
+        async function convertToNightShift() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async function(event) {
+                    const typedarray = new Uint8Array(event.target.result);
+                    const pdf = await pdfjsLib.getDocument({data: typedarray}).promise;
+                    
+                    const numPages = pdf.numPages;
+                    
+                    for (let i = 1; i <= numPages; i++) {
+                        const page = await pdf.getPage(i);
+                        const viewport = page.getViewport({ scale: 1.5 });
+                        
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport
+                        };
+                        
+                        await page.render(renderContext);
+                        
+                        // Apply Night Shift color conversion
+                        const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+                        const data = imageData.data;
+                        
+                        for (let j = 0; j < data.length; j += 4) {
+                            data[j] = convertColor(data[j]);
+                            data[j + 1] = convertColor(data[j + 1]);
+                            data[j + 2] = convertColor(data[j + 2]);
+                        }
+                        
+                        context.putImageData(imageData, 0, 0);
+                        
+                        // Convert canvas to Blob
+                        canvas.toBlob(function(blob) {
+                            // Create a link element to trigger download
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = `${file.name.split('.pdf')[0]}-Page${i}-NightShift.png`;
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            URL.revokeObjectURL(url);
+                        }, 'image/png');
+                    }
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        }
+
+        function convertColor(rgb) {
+            return 255 - rgb;
+        }
+    </script>
+</body>
+</html>

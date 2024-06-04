@@ -1,5 +1,6 @@
 // cookie.js
 
+/*
 function readCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -18,4 +19,4 @@ function readCookie(name) {
   if (!userLoggedIn) {
     window.location.href = '/AlexandrIcam/connexion.html';
   }
-  
+  */
